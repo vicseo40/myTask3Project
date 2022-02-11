@@ -1,0 +1,436 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0 auto;
+    display: flex;
+    font-family: 'Rowdies', cursive;
+    background-color: #e9e3e78a;
+}
+
+p {
+    font-family: 'Gideon Roman', cursive;
+}
+
+.mainDiv {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    /* This may look like more that 3 columns, but because of the span it will size out to three */
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 50px 1fr;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+header {
+    grid-column: 1 / 6;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.headNav {
+    flex: 1;
+    text-align: center;
+}
+
+.headNav li {
+    display: inline-block;
+    padding: 1em;
+}
+
+.headNav a {
+    text-decoration: none;
+}
+
+.myPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(161, 161, 161, 0.925);
+}
+
+.myPopup:target {
+    display: flex;
+}
+
+.myPopupContent {
+    text-align: center;
+    position: relative;
+    width: 80%;
+    padding: 2em;
+}
+
+.closePopup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    transition: all 0.5s ease 0s;
+}
+
+.closePopup:hover {
+    color: rgb(243, 243, 243);
+}
+
+main {
+    grid-column: 1/span 4;
+    grid-row: 2/span 2;
+    background-image: url(backimage.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+    display: flex;
+    /* grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr); */
+    align-items: center;
+    justify-content: space-around;
+    /* overflow: hidden; */
+    padding-left: 2em;
+    transition: all 0.5s ease 0s;
+}
+
+main:hover {
+    transform: rotateY(-20deg);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+}
+
+.mainContent {
+    text-align: left;
+}
+
+.mainContent h1 {
+    font-size: 40px;
+    padding-bottom: 2em;
+}
+
+.mainContent p {
+    font-size: 20px;
+}
+
+.my3dModel {
+    padding: 20px;
+}
+
+.rightSide {
+    grid-column: 5/span 1;
+    grid-row: 2/span 2;
+    padding-left: 0;
+}
+
+.moreDetailsHead {
+    width: 200px;
+    height: 5px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.moreDetails {
+    width: 200px;
+    height: 140px;
+    max-width: 200px;
+    max-height: 150px;
+    padding: 5px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px 10px;
+    background-image: url(forBlocks.jpg);
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+}
+
+.moreDetails2 {
+    width: 200px;
+    height: 140px;
+    max-width: 200px;
+    max-height: 150px;
+    padding: 5px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px 10px;
+    background-image: url(Blog1.jpg);
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+}
+
+.moreDetails3 {
+    width: 200px;
+    height: 140px;
+    max-width: 200px;
+    max-height: 150px;
+    padding: 5px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px 10px;
+    background-image: url(Blog2.jpg);
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+}
+
+.moreDetails4 {
+    width: 200px;
+    height: 140px;
+    max-width: 200px;
+    max-height: 150px;
+    padding: 5px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px 10px;
+    background-image: url(Blog3.jpg);
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+}
+
+.moreDetails:hover,
+.moreDetails2:hover,
+.moreDetails3:hover,
+.moreDetails4:hover {
+    transform: translateY(-10px) rotateY(40deg);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+}
+
+.sideNav {
+    width: 0;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    padding-top: 80px;
+    transition: 0.5s;
+}
+
+.sideNav a {
+    display: block;
+    padding: 20px 30px;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.sideNav .close {
+    position: absolute;
+    top: 0;
+    right: 15px;
+}
+
+.sideNav .close:hover {
+    color: rgb(161, 161, 161);
+    transition: 0.5s;
+}
+
+.openButton a {
+    color: #111;
+    font-size: 30px;
+}
+
+.openButton a:hover {
+    color: rgb(161, 161, 161);
+    transition: 0.5s;
+}
+
+.leftSide {
+    padding: 10px;
+    margin: 0;
+    transition: margin-left 0.5s;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.sideNav li a,
+.headNav li a {
+    transition: all 0.5s ease 0s;
+    color: black;
+}
+
+.sideNav li a:hover,
+.headNav li a:hover {
+    color: rgb(151, 151, 151);
+    border-bottom: 4px solid rgb(151, 151, 151);
+    padding-bottom: 2px;
+}
+
+footer {
+    grid-column: 1/span 4;
+    height: 60px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.logo {
+    width: 120px;
+    cursor: pointer;
+    padding-left: 20px;
+}
+
+@media only screen and (max-width:1300px) {
+    .mainDiv {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px 1fr 1fr 5px;
+        color: white;
+        padding-right: 2em;
+    }
+    header {
+        grid-row: 1/span 1;
+        grid-column: 1/span 1;
+    }
+    main {
+        grid-row: 2/ span 1;
+        grid-column: 1/span 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        /* flex-flow: wrap; */
+    }
+    .rightSide {
+        grid-row: 3/span 1;
+        grid-column: 1/ span 1;
+        display: grid;
+        grid-template-columns: repeat(2 1fr);
+        grid-template-rows: repeat(2 1fr);
+    }
+    footer {
+        grid-row: 4/span 1;
+        grid-column: 1/span 1;
+    }
+    .moreDetailsHead {
+        display: none;
+    }
+    .mainContent {
+        text-align: center;
+    }
+    .mainContent h1 {
+        font-size: 30px;
+    }
+    .mainContent p {
+        font-size: 20px;
+    }
+    .moreDetails {
+        width: 300px;
+        height: 140px;
+        max-width: none;
+        max-height: none;
+        grid-row: 1/span 1;
+        grid-column: 1/span 1;
+    }
+    .moreDetails2 {
+        width: 300px;
+        height: 140px;
+        max-width: none;
+        max-height: none;
+        grid-row: 1/span 1;
+        grid-column: 2/span 1;
+    }
+    .moreDetails3 {
+        width: 300px;
+        height: 140px;
+        max-width: none;
+        max-height: none;
+        grid-row: 2/span 1;
+        grid-column: 1/span 1;
+    }
+    .moreDetails4 {
+        width: 300px;
+        height: 140px;
+        max-width: none;
+        max-height: none;
+        grid-row: 2/span 1;
+        grid-column: 2/span 1;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .mainDiv {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px 1fr 1fr 5px;
+        color: rgb(246, 255, 143);
+    }
+    header {
+        grid-row: 1/span 1;
+        grid-column: 1/span 1;
+    }
+    main {
+        grid-row: 2/ span 1;
+        grid-column: 1/span 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        /* flex-flow: wrap; */
+    }
+    .rightSide {
+        grid-row: 3/span 1;
+        grid-column: 1/ span 1;
+        display: flex;
+        flex-direction: column;
+    }
+    footer {
+        grid-row: 4/span 1;
+        grid-column: 1/span 1;
+    }
+    .moreDetailsHead {
+        display: none;
+    }
+    .mainContent {
+        text-align: center;
+    }
+    .mainContent h1 {
+        font-size: 25px;
+    }
+    .mainContent p {
+        font-size: 15px;
+    }
+    .moreDetails {
+        width: 300px;
+        height: 140px;
+        max-width: none;
+        max-height: none;
+    }
+    .moreDetails2 {
+        width: 300px;
+        height: 140px;
+        max-width: none;
+        max-height: none;
+    }
+    .moreDetails3 {
+        width: 300px;
+        height: 140px;
+        max-width: none;
+        max-height: none;
+    }
+    .moreDetails4 {
+        width: 300px;
+        height: 140px;
+        max-width: none;
+        max-height: none;
+    }
+}

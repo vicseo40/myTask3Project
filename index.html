@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementation 3</title>
+    <script src="https://kit.fontawesome.com/d8b8cf5e9b.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="myFavicon1.png">
+    <link rel="stylesheet" href="FlexBox_GridScheme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        function openSlideMenu() {
+            document.getElementById('navMenu').style.width = '225px';
+            document.getElementById('myMenu').style.marginLeft = '225px';
+        }
+
+        function closeSlideMenu() {
+            document.getElementById('navMenu').style.width = '0';
+            document.getElementById('myMenu').style.marginLeft = '0';
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Left side bar can be used for a more full navigation experience for the user. 
+    The top header can stay simple while the left side bar holds most of the list. 
+    This we create a modern artistic aestetic is it a look that you're interested in having. -->
+    <div id="myMenu" class="leftSide">
+
+        <span class="openButton">
+            <a href="#" onclick="openSlideMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+        </span>
+
+        <nav id="navMenu" class="sideNav">
+            <a href="#" class="close" onclick="closeSlideMenu()">
+                <i class="fa-regular fa-circle-xmark"></i>
+            </a>
+            <ul>
+                <li><a href="Task2_2_ThreeColumnWebPage_VictorSeongJaCisangani.html" class="sideChange">Home</a></li>
+                <li><a href="#my3dPopup" class="sideChange">3D Product</a></li>
+                <li><a href="#" class="sideChange">Offerings</a></li>
+                <li><a href="#" class="sideChange">Media</a></li>
+                <li><a href="#" class="sideChange">About</a></li>
+                <li><a href="#" class="sideChange">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="mainDiv">
+        <header>
+            <nav class="headNav">
+                <ul>
+                    <li><a href="Task2_2_ThreeColumnWebPage_VictorSeongJaCisangani.html">Home</a></li>
+                    <li><a href="#my3dPopup">3D Product</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div id="my3dPopup" class="myPopup">
+            <div class="myPopupContent">
+                <a href="#" class="closePopup"><i class="fa-regular fa-circle-xmark"></i></a>
+                <iframe src='https://my.spline.design/untitled-c7ccbb1e8f3bf2400117ec284a166f45/' frameborder='0' width='500px' height='500px'></iframe>
+                <h2>This is our 3D Product</h2>
+                <p>The customer will be able to view it from here.</p>
+            </div>
+        </div>
+
+        <!-- Main content/Your product can be displayed here if you'd like.
+        I based the content on the color purple because I like purple but we can always change it-->
+        <main>
+            <section class="mainContent">
+
+                <h1>Why you should chose us?</h1>
+                <p>We focus on a simple design captivating that makes your product stand out even more. Nobody does it like us.
+                </p>
+
+            </section>
+
+            <section class="my3dModel">
+                <iframe src='https://my.spline.design/untitled-c7ccbb1e8f3bf2400117ec284a166f45/' frameborder='0' width='300px' height='300px'></iframe>
+            </section>
+        </main>
+
+        <!-- We can put your blog here or even a signup/sign in form etc. 
+        We can give it a 3D feel on hover-->
+        <aside class="rightSide">
+            <article class="moreDetailsHead">
+                <h4>Checkout our blog</h4>
+            </article>
+            <article class="moreDetails">
+                <h5>When can we expect spaceships</h5>
+                <p>This can either be your product or your blogs</p>
+            </article>
+            <article class="moreDetails2">
+                <h5>How YuMi is changes lives</h5>
+                <p>This can either be your product or your blogs</p>
+            </article>
+            <article class="moreDetails3">
+                <h5>Why 3D printing is the future</h5>
+                <p>This can either be your product or your blogs</p>
+            </article>
+            <article class="moreDetails4">
+                <h5>Technology conference</h5>
+                <p>This can either be your product or your blogs</p>
+            </article>
+
+        </aside>
+        <footer><img class="logo" src="myLogos.png"></footer>
+    </div>
+
+</body>
+
+</html>
